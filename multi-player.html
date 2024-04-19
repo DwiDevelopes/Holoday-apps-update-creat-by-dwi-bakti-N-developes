@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="style.css">
+    </head>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <body>
+      
+<nav class="navbar navbar-dark bg-dark navbar-expand d-md-none d-lg-none d-xl-none fixed-bottom">
+
+    <ul class="navbar-nav nav-justified w-100">
+
+      <li class="nav-item">
+        <a href="index.html" class="nav-link"><i class="fa-solid fa-house-chimney-window"></i></a>
+      </li>
+      <li class="nav-item">
+        <a href="crop.html" class="nav-link"><i class="fa-solid fa-photo-film"></i></a>
+      </li>
+      <li class="nav-item">
+        <a href="resizer.html" class="nav-link"><i class="fa-solid fa-panorama"></i></a>
+      </li>
+      <li class="nav-item">
+        <a href="kontras.html" class="nav-link"><i class="fa-solid fa-circle-half-stroke"></i></a>
+                      <li class="nav-item">
+        <a href="articel.html" class="nav-link"><i class="fa-regular fa-window-restore"></i></a>
+                              <li class="nav-item">
+
+        <a href="viture.html" class="nav-link"><i class="fa-solid fa-face-grimace"></i></a>
+    </ul>
+  </nav>
+ <h2>HOL <i class="fa-brands fa-wolf-pack-battalion"></i> DAY</h2>
+  <style>
+    h2{
+      position: absolute;
+      top: 30px;
+      left: 26%;
+    }
+  </style>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dark Mode Toggle</title>
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <input type="checkbox" id="toggle">
+    </div>
+    <style>
+      *,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    padding: 30px;
+}
+.container{
+    width: 100%;
+    height: 40px;
+    position: relative;
+    margin-bottom: 30px;
+}
+#toggle{
+    -webkit-appearance: none;
+    appearance: none;
+    height: 40px;
+    width: 75px;
+    background-color: #15181f;
+    position: absolute;
+    bottom:-50px;
+    left:40%;
+    right: 0;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+}
+#toggle:after{
+    content: "";
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    background-color: #ffffff;
+    top: 5px;
+    left: 7px;
+    border-radius: 50%;
+}
+p{
+    font-family: "Open Sans",sans-serif;
+    line-height: 35px;
+    text-align: justify;
+}
+.dark-theme{
+    background-color: #15181f;
+    color: #e5e5e5;
+}
+.dark-theme #toggle{
+    background-color: #ffffff;
+}
+.dark-theme #toggle:after{
+    background-color: transparent;
+    box-shadow: 10px 10px #15181f;
+    top: -4px;
+    left: 30px;
+}
+    </style>
+    <script>document.getElementById("toggle").addEventListener("click", function(){
+    document.getElementsByTagName('body')[0].classList.toggle("dark-theme");
+});</script>
+</body>
+</html>
+        <div class = 'wrapper'>
+            <div class = "upload">
+                <div class = "upload-wrapper">
+                    <div class = "upload-img">
+                        <!-- image here -->
+                    </div>
+                    <div class = "upload-info">
+                        <p>
+                            <span class = "upload-info-value">0</span> file(s) uploaded.
+                        </p>
+                    </div>
+                    <div class = "upload-area">
+                        <div class = "upload-area-img">
+                            <img src = "wolf.png" alt = "">
+                        </div>
+                        <p class = "upload-area-text">Select images or <span>File</span>.</p>
+                    </div>
+                    <input type = "file" class = "visually-hidden" id = "upload-input" multiple>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+        <script src = "script.js"></script>
+    </body>
+    <script>
+      
+
+$(document).ready(function(){
+    $(".upload-area").click(function(){
+        $('#upload-input').trigger('click');
+    });
+
+    $('#upload-input').change(event => {
+        if(event.target.files){
+            let filesAmount = event.target.files.length;
+            $('.upload-img').html("");
+
+            for(let i = 0; i < filesAmount; i++){
+                let reader = new FileReader();
+                reader.onload = function(event){
+                    let html = `
+                        <div class = "uploaded-img">
+                            <img src = "${event.target.result}">
+                            <button type = "button" class = "remove-btn">
+                                <i class = "fas fa-times"></i>
+                            </button>
+                        </div>
+                    `;
+                    $(".upload-img").append(html);
+                }
+                reader.readAsDataURL(event.target.files[i]);
+            }
+
+            $('.upload-info-value').text(filesAmount);
+            $('.upload-img').css('padding', "20px");
+        }
+    });
+
+    $(window).click(function(event){
+        if($(event.target).hasClass('remove-btn')){
+            $(event.target).parent().remove();
+        } else if($(event.target).parent().hasClass('remove-btn')){
+            $(event.target).parent().parent().remove();
+        }
+    })
+});
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root{
+    --primary-color: #396ce8;
+    --primary-dark-color: #1544b7;
+    --white-color: #fff;
+    --black-10-color: rgba(0, 0, 0, 0.1);
+    --black-20-color: rgba(0, 0, 0, 0.1);
+    --black-50-color: rgba(0, 0, 0, 0.5);
+    --transition: all 300ms ease-in-out;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+}
+img{
+    width: 100%;
+}
+.wrapper{
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.upload{
+    background-color: var(--white-color);
+    border-radius: 10px;
+    box-shadow: rgb(21, 68, 183) 0px 8px 24px;
+    width: 340px;
+    min-height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.upload-info p{
+    opacity: 0.6;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.upload-wrapper{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.upload-img{
+    max-height: 300px;
+    overflow-y: scroll;
+}
+.upload-img::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 6px var(--black-20-color);
+    border-radius: 6px;
+}
+.upload-img::-webkit-scrollbar-thumb{
+    background-color: var(--black-10-color);
+    border-radius: 6px;
+}
+.upload-img::-webkit-scrollbar{
+    width: 5px;
+}
+.upload-area{
+    padding: 20px;
+    border: 2px dashed var(--black-20-color);
+    border-radius: 8px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.upload-area:hover{
+    background-color: rgba(176, 196, 246, 0.1);
+}
+.upload-area-img img{
+    max-width: 80px;
+}
+.upload-area-text{
+    font-weight: 700;
+    color: var(--black-50-color);
+}
+.upload-area-text span{
+    color: var(--primary-color);
+}
+.visually-hidden{
+    visibility: hidden;
+    opacity: 0;
+}
+.upload-img{
+    width: 340px;
+}
+.uploaded-img{
+    padding: 4px 0;
+    position: relative;
+}
+
+
+/* remove image button */
+.remove-btn{
+    width: 22px;
+    height: 22px;
+    background-color: var(--white-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 50%;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.remove-btn:hover{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+    </style>
+</html>

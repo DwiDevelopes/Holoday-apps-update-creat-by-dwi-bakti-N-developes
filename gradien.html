@@ -1,0 +1,307 @@
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+              <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="gradient-box"></div>
+      <div class="row options">
+        <div class="column direction">
+          <p>Direction</p>
+          <div class="select-box">
+            <select>
+              <option value="to top">Top</option>
+              <option value="to right top">Right top</option>
+              <option value="to right">Right</option>
+              <option value="to right bottom">Right bottom</option>
+              <option value="to bottom">Bottom</option>
+              <option value="to left bottom">Left bottom</option>
+              <option value="to left">Left</option>
+              <option value="to left top" selected>Left top</option>
+            </select>
+          </div>
+        </div>
+        <div class="column palette">
+          <p>Colors</p>
+          <div class="colors">
+            <input type="color" value="#5665E9">
+            <input type="color" value="#A271F8">
+          </div>
+        </div>
+      </div>
+      <textarea class="row" disabled>background-image: linear-gradient(to left top, #977DFE,  #6878FF);</textarea>
+      <div class="row buttons">
+        <button class="refresh">Refresh Colors</button>
+        <button class="copy">Copy Code</button>
+                <a href="viture.html"><button class="bang"><i class="fa-solid fa-backward"></i></button></a>
+      </div>
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dark Mode Toggle</title>
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <input type="checkbox" id="toggle">
+    </div>
+    <script>
+      document.getElementById("toggle").addEventListener("click", function(){
+    document.getElementsByTagName('body')[0].classList.toggle("dark-theme");
+});
+    </script>
+    <h2>HOL <i class="fa-brands fa-wolf-pack-battalion"></i> DAY</h2>
+    <style>
+      *,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    padding: 30px;
+}
+.container{
+    width: 100%;
+    height: 40px;
+    position: relative;
+    margin-bottom: 30px;
+}
+#toggle{
+    -webkit-appearance: none;
+    appearance: none;
+    height: 40px;
+    width: 75px;
+    background-color: #000;
+    position: absolute;
+    bottom: -70px;
+    right: 0;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+}
+#toggle:after{
+    content: "";
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    background-color: #ffffff;
+    top: 5px;
+    left: 7px;
+    border-radius: 50%;
+}
+p{
+    font-family: "Open Sans",sans-serif;
+    line-height: 35px;
+    text-align: justify;
+}
+.dark-theme{
+    background-color: #000;
+    color: #e5e5e5;
+}
+.dark-theme #toggle{
+    background-color: #ffffff;
+}
+.dark-theme #toggle:after{
+    background-color: transparent;
+    box-shadow: 10px 10px #15181f;
+    top: -4px;
+    left: 30px;
+}
+    </style>
+</body>
+</html>
+    </div>
+        <style>
+          /* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  
+}
+.wrapper {
+  width: 450px;
+  padding: 25px;
+  background: #336;
+  border-radius: 7px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.06);
+}
+.wrapper .gradient-box {
+  height: 220px;
+  width: 100%;
+  border-radius: 7px;
+  background: linear-gradient(to left top, #5665E9, #A271F8);
+}
+.bang{
+    position: fixed;
+  left: 50%;
+  bottom: 5px;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  background: #8A6CFF;
+  padding: 13px 20px;
+  border: 2px solid #fff;
+  transform: translateX(-50%);
+  box-shadow: 0 15px 30px rgba(52,87,220,0.2);
+  transition: all 0.3s ease;
+}
+.wrapper .row {
+  display: flex;
+  margin: 20px 0;
+  justify-content: space-between;
+}
+.options p {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+.row :where(.column, button) {
+  width: calc(100% / 2 - 12px);
+}
+.options .select-box {
+  border-radius: 5px;
+  padding: 10px 15px;
+  border: 1px solid #aaa;
+}
+.select-box select {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 1.12rem;
+  background: none;
+}
+.options .palette {
+  margin-left: 60px;
+}
+.palette input {
+  height: 41px;
+  width: calc(100% / 2 - 20px);
+}
+.palette input:last-child {
+  margin-left: 6px;
+}
+.wrapper textarea {
+  width: 100%;
+  color: #333;
+  font-size: 1.05rem;
+  resize: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.buttons button {
+  padding: 15px 0;
+  border: none;
+  outline: none;
+  color: #fff;
+  margin: 0 0 -15px;
+  font-size: 1.09rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.buttons .refresh {
+  background: #6C757D;
+}
+.buttons .refresh:hover {
+  background: #5f666d;
+}
+.buttons .copy {
+  background: #8A6CFF;
+}
+.buttons .copy:hover {
+  background: #704dff;
+}
+
+@media screen and (max-width: 432px) {
+  .wrapper {
+    padding: 25px 20px;
+  }
+  .row :where(.column, button) {
+    width: calc(100% / 2 - 8px);
+  }
+  .options .select-box {
+    padding: 8px 15px;
+  }
+  .options .palette  {
+    margin-left: 40px;
+  }
+  .options .colors {
+    display: flex;
+    justify-content: space-between;
+  }
+  .palette input {
+    width: calc(100% / 2 - 5px);
+  }
+  .palette input:last-child {
+    margin-left: 0;
+  }
+}
+        </style>
+        <script>
+          const gradientBox = document.querySelector(".gradient-box");
+const selectMenu = document.querySelector(".select-box select");
+const colorInputs = document.querySelectorAll(".colors input");
+const textarea = document.querySelector("textarea");
+const refreshBtn = document.querySelector(".refresh");
+const copyBtn = document.querySelector(".copy");
+
+const getRandomColor = () => {
+    // Generating a random color in hexadecimal format. Example: #5665E9
+    const randomHex = Math.floor(Math.random() * 0xffffff).toString(16);
+    return `#${randomHex}`;
+}
+
+const generateGradient = (isRandom) => {
+    if(isRandom) { // If isRandom is true, update the colors inputs value with random color
+        colorInputs[0].value = getRandomColor();
+        colorInputs[1].value = getRandomColor();
+    }
+    // Creating a gradient string using the select menu value with color input values
+    const gradient = `linear-gradient(${selectMenu.value}, ${colorInputs[0].value}, ${colorInputs[1].value})`;
+    gradientBox.style.background = gradient;
+    textarea.value = `background: ${gradient};`;
+}
+
+const copyCode = () => {
+    // Copying textarea value and updating the copy button text
+    navigator.clipboard.writeText(textarea.value);
+    copyBtn.innerText = "Code Copied";
+    setTimeout(() => copyBtn.innerText = "Copy Code", 1600);
+}
+
+colorInputs.forEach(input => {
+    // Calling generateGradient function on each color input clicks
+    input.addEventListener("input", () => generateGradient(false));
+});
+
+selectMenu.addEventListener("change", () => generateGradient(false));
+refreshBtn.addEventListener("click", () => generateGradient(true));
+copyBtn.addEventListener("click", copyCode);
+        </script>
+  </body>
+</html>
